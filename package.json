@@ -1,0 +1,87 @@
+{
+  "private": true,
+  "guid": "EFD6FD4E-DE2B-44F8-9C1E-4406BDAC4F2E",
+  "name": "walkner-maxos",
+  "version": "0.0.0",
+  "updater": {
+    "maxos": {
+      "backend": 1,
+      "frontend": 1,
+      "alarms": 1,
+      "controller": 1,
+      "watchdog": 1,
+      "mailer": 1
+    }
+  },
+  "description": "Cable testing application in Node.js.",
+  "license": "CC BY-NC-SA 4.0",
+  "homepage": "https://github.com/morkai/walkner-maxos",
+  "author": {
+    "name": "Łukasz Walukiewicz",
+    "email": "lukasz@miracle.systems",
+    "url": "https://miracle.systems/"
+  },
+  "bugs": "https://github.com/morkai/walkner-maxos/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/morkai/walkner-maxos.git"
+  },
+  "engine": [
+    "node >=8.0.0"
+  ],
+  "main": "./backend/main",
+  "dependencies": {
+    "axon": "~2.0.3",
+    "bcrypt": "~1.0.2",
+    "blocked": "~1.2.1",
+    "body-parser": "~1.17.2",
+    "cookie": "~0.3.1",
+    "cookie-parser": "~1.4.3",
+    "csv": "~1.1.1",
+    "deep-equal": "~1.0.1",
+    "ejs": "~2.5.7",
+    "ejs-amd": "~1.0.0",
+    "escodegen": "~1.8.0",
+    "esprima": "~2.7.2",
+    "estraverse": "~4.2.0",
+    "express": "~4.15.4",
+    "express-session": "~1.15.5",
+    "fs-extra": "~4.0.1",
+    "glp2": "git+http://github.com/morkai/node-glp2.git#a384cd9791e",
+    "h5.main": "git+http://github.com/morkai/h5.main.git#7fb51e2571",
+    "h5.modbus": "git+http://github.com/morkai/h5.modbus#552e2c3f6f",
+    "h5.pubsub": "git+http://github.com/morkai/h5.pubsub.git#c1a899cb7e",
+    "h5.rql": "git+http://github.com/morkai/h5.rql.git#5622189665",
+    "h5.step": "git+http://github.com/morkai/h5.step.git#14ea69a759",
+    "https-proxy-agent": "~1.0.0",
+    "later": "~1.2.0",
+    "lodash": "~4.17.4",
+    "mail-listener2": "~0.3.1",
+    "messageformat": "~0.2.2",
+    "messageformat-amd": "git+http://github.com/morkai/messageformat-amd.git#d41fd5caba",
+    "methods": "~1.1.2",
+    "moment": "~2.18.1",
+    "mongodb": "~2.2.31",
+    "mongoose": "~4.11.7",
+    "mongoose-auto-increment": "~5.0.1",
+    "multer": "~1.3.0",
+    "nodemailer": "~4.0.1",
+    "request": "~2.83.0",
+    "socket.io": "~1.7.4",
+    "transliteration": "~1.6.2",
+    "twilio": "~3.6.0",
+    "uuid": "~3.1.0"
+  },
+  "devDependencies": {
+    "grunt": "~1.0.1",
+    "grunt-contrib-clean": "~1.1.0",
+    "grunt-contrib-concat": "~1.0.1",
+    "grunt-contrib-copy": "~1.0.0",
+    "grunt-contrib-requirejs": "~1.0.0",
+    "grunt-ejs-amd": "git+http://github.com/morkai/grunt-ejs-amd.git#07b9f7ae3a",
+    "grunt-eslint": "~20.0.0",
+    "grunt-messageformat-amd": "git+http://github.com/morkai/grunt-messageformat-amd.git#052e4d4ee5",
+    "grunt-run": "~0.7.0",
+    "grunt-text-replace": "~0.4.0"
+  }
+}

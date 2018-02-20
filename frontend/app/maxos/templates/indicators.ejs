@@ -1,0 +1,31 @@
+<div class="maxos-indicators <%- enlarged ? 'is-enlarged' : '' %>">
+  <% cables.forEach(function(cable) { %>
+  <div class="maxos-cable" data-cable="<%- cable.no %>">
+    <div class="maxos-safetyTest" data-tag="safetyTest.disabled" data-true="" data-false="">
+      <div class="maxos-source-indicator" data-tag="S.<%- cable.no %>.status">S<%- cable.no %></div>
+      <div class="maxos-safetyTest-indicator" data-tag="program.safetyTest.<%- cable.no %>.pe1">PE</div>
+      <i class="fa fa-arrow-down"></i>
+      <div class="maxos-safetyTest-indicator" data-tag="program.safetyTest.<%- cable.no %>.iso">ISO</div>
+      <i class="fa fa-arrow-down maxos-safetyTest-pe2" data-tag="safetyTest.pe2" data-true="" data-false=""></i>
+      <div class="maxos-safetyTest-indicator maxos-safetyTest-pe2" data-tag="program.safetyTest.<%- cable.no %>.pe2">PE</div>
+    </div>
+    <div class="maxos-connectors">
+      <% cable.connectors.forEach(function(connector) { %>
+      <div class="maxos-connector" data-cable="<%- cable.no %>" data-connector="<%- connector.no %>">
+        <div class="maxos-connector-label maxos-off" data-tag="L.<%- connector.no %>.aside">L<%- connector.no %></div>
+        <% connector.cores.forEach(function(core) { %>
+        <div class="maxos-core" data-tag="L.<%- connector.no %>.<%- core.no %>.<%- connector.tagSuffix %>" data-cable="<%- cable.no %>" data-connector="<%- connector.no %>" data-core="<%- core.no %>">
+          <%- cable.no %>.<%- connector.no %>.<%- core.no %>
+        </div>
+        <% }) %>
+      </div>
+      <div class="maxos-links">
+        <% connector.cores.forEach(function(core) { %>
+        <div class="maxos-link" data-cable="<%- cable.no %>" data-core="<%- core.no %>"></div>
+        <% }) %>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+  <% }) %>
+</div>

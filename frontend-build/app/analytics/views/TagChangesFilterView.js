@@ -1,0 +1,3 @@
+// Part of <https://miracle.systems/p/walkner-maxos> licensed under <CC BY-NC-SA 4.0>
+
+define(["app/core/util/fixTimeRange","app/core/views/FilterView","app/analytics/templates/changesFilter"],function(e,t,r){"use strict";return t.extend({template:r,defaultFormData:function(){return{from:"",to:""}},termToForm:{t:function(t,r,a){e.toFormData(a,r,"date+time")}},serializeFormToQuery:function(t){var r=e.fromView(this);r.from&&t.push({name:"ge",args:["t",r.from]}),r.to&&t.push({name:"le",args:["t",r.to]})}})});

@@ -1,0 +1,156 @@
+name,description,master,kind,unit,address,readable,writable,type,rawMin,rawMax,scaleUnit,scaleFunction,scaleMin,scaleMax,archive
+,Ustawienia,,,,,,,,,,,,,,
+remoteServerUrl,Adres serwera WMES,-,setting,-,-,1,1,string,-,-,-,-,-,-,-
+httpProxyUrl,Adres serwera proxy,-,setting,-,-,1,1,string,-,-,-,-,-,-,-
+prodLines,ID linii produkcyjnych WMES,-,setting,-,-,1,1,string,-,-,-,-,-,-,-
+checkAsideConnectors,Sprawdzanie odłożenia łączówek,-,setting,-,-,1,1,bool,-,-,-,-,-,-,-
+powerConnector.1,Nr łączówki zasilającej dla pierwszego przewodu,-,setting,-,-,1,1,number,0,10,-,-,-,-,-
+powerConnector.2,Nr łączówki zasilającej dla drugiego przewodu,-,setting,-,-,1,1,number,0,10,-,-,-,-,-
+successTimeout,Czas do resetu po pomyślnym teście [ms],-,setting,-,-,1,1,number,1000,60000,-,-,-,-,-
+failureTimeout,Czas do resetu po nieudanym teście [ms],-,setting,-,-,1,1,number,1000,60000,-,-,-,-,-
+safetyTest.disabled,Wyłączenie testu bezpieczeństwa,-,setting,-,-,1,1,bool,-,-,-,-,-,-,-
+safetyTest.pe2,Wyłączenie drugiego testu PE,-,setting,-,-,1,1,bool,-,-,-,-,-,-,-
+safetyTest.config,Konfiguracja testu bezpieczeństwa,-,setting,-,-,1,1,object,-,-,-,-,-,-,-
+safetyTest.maxDuration,Maks. czas testu bezpieczeństwa [ms],-,setting,-,-,1,1,number,3000,300000,-,-,-,-,-
+safetyTest.blackbox,Test BLACKBOX,-,setting,-,-,1,1,bool,-,-,-,-,-,-,-
+throughWireTest.disabled,Wyłączenie testu oprzewodowania,-,setting,-,-,1,1,bool,-,-,-,-,-,-,-
+throughWireTest.autoStart,Automatyczny start testu oprzewodowania,-,setting,-,-,1,1,bool,-,-,-,-,-,-,-
+throughWireTest.checkAllCores,Sprawdzanie sprawdzonych żył,-,setting,-,-,1,1,bool,-,-,-,-,-,-,-
+throughWireTest.checkDelay,Min. odstęp czasu do sprawdzania żył [ms],-,setting,-,-,1,1,number,1,10000,-,-,-,-,-
+labels.inside.printer,Etykieta wewnętrzna: adres drukarki,-,setting,-,-,1,1,string,-,-,-,-,-,-,-
+labels.inside.offsetX,Etykieta wewnętrzna: przesunięcie poziome,-,setting,-,-,1,1,number,0,9999,-,-,-,-,-
+labels.inside.offsetY,Etykieta wewnętrzna: przesunięcie pionowe,-,setting,-,-,1,1,number,0,9999,-,-,-,-,-
+labels.outside.printer,Etykieta zewnętrzna: adres drukarki,-,setting,-,-,1,1,string,-,-,-,-,-,-,-
+labels.outside.offsetX,Etykieta zewnętrzna: przesunięcie poziome,-,setting,-,-,1,1,number,0,9999,-,-,-,-,-
+labels.outside.offsetY,Etykieta zewnętrzna: przesunięcie pionowe,-,setting,-,-,1,1,number,0,9999,-,-,-,-,-
+,Program,,,,,,,,,,,,,,
+program.order,Aktualne zlecenie,-,memory,-,-,1,1,object,-,-,-,-,-,-,-
+program.quantityDone,Ilość zrobiona w aktualnym zleceniu,-,memory,-,-,1,1,number,0,9999,-,-,-,-,-
+program.lastSerialNumber,Ostatni wygenerowany nr seryjny,-,memory,-,-,1,1,string,-,-,-,-,-,-,-
+program.cables,Ilość przewodów,-,memory,-,-,1,1,number,0,2,-,-,-,-,-
+program.connectors,Ilość łączówek,-,memory,-,-,1,1,number,0,3,-,-,-,-,-
+program.cores,Ilość żył,-,memory,-,-,1,1,number,0,7,-,-,-,-,-
+program.state,Aktualny stan programu,-,memory,-,-,1,1,string,-,-,-,-,-,-,-
+program.cable,Aktualny przewód,-,memory,-,-,1,1,number,0,2,-,-,-,-,-
+program.message,Aktualny komunikat,-,memory,-,-,1,1,object,-,-,-,-,-,-,-
+program.cancelled,Anulowanie testu,-,memory,-,-,1,1,bool,-,-,-,-,-,-,-
+program.safetyTest.1.pe1,Status testu PE 1 przewodu 1,-,memory,-,-,1,1,string,-,-,-,-,-,-,-
+program.safetyTest.1.pe2,Status testu PE 2 przewodu 1,-,memory,-,-,1,1,string,-,-,-,-,-,-,-
+program.safetyTest.1.iso,Status testu ISO przewodu 1,-,memory,-,-,1,1,string,-,-,-,-,-,-,-
+program.safetyTest.2.pe1,Status testu PE 1 przewodu 2,-,memory,-,-,1,1,string,-,-,-,-,-,-,-
+program.safetyTest.2.pe2,Status testu PE 2 przewodu 2,-,memory,-,-,1,1,string,-,-,-,-,-,-,-
+program.safetyTest.2.iso,Status testu ISO przewodu 2,-,memory,-,-,1,1,string,-,-,-,-,-,-,-
+program.throughWireTest.1.1,Status testu żyły 1.1,-,memory,-,-,1,1,string,-,-,-,-,-,-,-
+program.throughWireTest.1.2,Status testu żyły 1.2,-,memory,-,-,1,1,string,-,-,-,-,-,-,-
+program.throughWireTest.1.3,Status testu żyły 1.3,-,memory,-,-,1,1,string,-,-,-,-,-,-,-
+program.throughWireTest.1.4,Status testu żyły 1.4,-,memory,-,-,1,1,string,-,-,-,-,-,-,-
+program.throughWireTest.1.5,Status testu żyły 1.5,-,memory,-,-,1,1,string,-,-,-,-,-,-,-
+program.throughWireTest.1.6,Status testu żyły 1.6,-,memory,-,-,1,1,string,-,-,-,-,-,-,-
+program.throughWireTest.1.7,Status testu żyły 1.7,-,memory,-,-,1,1,string,-,-,-,-,-,-,-
+program.throughWireTest.2.1,Status testu żyły 2.1,-,memory,-,-,1,1,string,-,-,-,-,-,-,-
+program.throughWireTest.2.2,Status testu żyły 2.2,-,memory,-,-,1,1,string,-,-,-,-,-,-,-
+program.throughWireTest.2.3,Status testu żyły 2.3,-,memory,-,-,1,1,string,-,-,-,-,-,-,-
+program.throughWireTest.2.4,Status testu żyły 2.4,-,memory,-,-,1,1,string,-,-,-,-,-,-,-
+program.throughWireTest.2.5,Status testu żyły 2.5,-,memory,-,-,1,1,string,-,-,-,-,-,-,-
+program.throughWireTest.2.6,Status testu żyły 2.6,-,memory,-,-,1,1,string,-,-,-,-,-,-,-
+program.throughWireTest.2.7,Status testu żyły 2.7,-,memory,-,-,1,1,string,-,-,-,-,-,-,-
+,Bezpieczeństwo,,,,,,,,,,,,,,
+estop,E-stop,plc,input,1,X7,1,0,bool,-,-,-,-,-,-,-
+,S1 - Stycznik 1 - niebieski,,,,,,,,,,,,,,
+S.1.control,S1: Załączenie,plc,output,1,Y40,1,1,bool,-,-,-,-,-,-,-
+S.1.status,S1: Potwierdzenie,plc,input,1,X0,1,0,bool,-,-,-,-,-,-,-
+,S2 - Stycznik 2 - czerwony,,,,,,,,,,,,,,
+S.2.control,S2: Załączenie,plc,output,1,Y41,1,1,bool,-,-,-,-,-,-,-
+S.2.status,S2: Potwierdzenie,plc,input,1,X1,1,0,bool,-,-,-,-,-,-,-
+,L1 - Łączówka 1 - końcowa niebieska,,,,,,,,,,,,,,
+L.1.aside,L1: Czujnik odłożenia,plc,input,1,1104,1,0,bool,-,-,-,-,-,-,-
+L.1.1.status,L1: Żyła 1: Potwierdzenie,plc,input,1,X20,1,0,bool,-,-,-,-,-,-,-
+L.1.2.status,L1: Żyła 2: Potwierdzenie,plc,input,1,X21,1,0,bool,-,-,-,-,-,-,-
+L.1.3.status,L1: Żyła 3: Potwierdzenie,plc,input,1,X25,1,0,bool,-,-,-,-,-,-,-
+L.1.4.status,L1: Żyła 4: Potwierdzenie,plc,input,1,X23,1,0,bool,-,-,-,-,-,-,-
+L.1.5.status,L1: Żyła 5: Potwierdzenie,plc,input,1,X24,1,0,bool,-,-,-,-,-,-,-
+L.1.6.status,L1: Żyła 6: Potwierdzenie,plc,input,1,X22,1,0,bool,-,-,-,-,-,-,-
+L.1.7.status,L1: Żyła 7: Potwierdzenie,plc,input,1,X26,1,0,bool,-,-,-,-,-,-,-
+,L2 - Łączówka 2 - LED niebieska,,,,,,,,,,,,,,
+L.2.aside,L2: Czujnik odłożenia,plc,input,1,1105,1,0,bool,-,-,-,-,-,-,-
+L.2.1.status,L2: Żyła 1: Potwierdzenie,plc,input,1,X30,1,0,bool,-,-,-,-,-,-,-
+L.2.2.status,L2: Żyła 2: Potwierdzenie,plc,input,1,X31,1,0,bool,-,-,-,-,-,-,-
+L.2.3.status,L2: Żyła 3: Potwierdzenie,plc,input,1,X35,1,0,bool,-,-,-,-,-,-,-
+L.2.4.status,L2: Żyła 4: Potwierdzenie,plc,input,1,X33,1,0,bool,-,-,-,-,-,-,-
+L.2.5.status,L2: Żyła 5: Potwierdzenie,plc,input,1,X34,1,0,bool,-,-,-,-,-,-,-
+L.2.6.status,L2: Żyła 6: Potwierdzenie,plc,input,1,X32,1,0,bool,-,-,-,-,-,-,-
+L.2.7.status,L2: Żyła 7: Potwierdzenie,plc,input,1,X36,1,0,bool,-,-,-,-,-,-,-
+,L3 - Łączówka 3 - LED niebieska,,,,,,,,,,,,,,
+L.3.aside,L3: Czujnik odłożenia,plc,input,1,1106,1,0,bool,-,-,-,-,-,-,-
+L.3.1.status,L3: Żyła 1: Potwierdzenie,plc,input,1,X40,1,0,bool,-,-,-,-,-,-,-
+L.3.2.status,L3: Żyła 2: Potwierdzenie,plc,input,1,X41,1,0,bool,-,-,-,-,-,-,-
+L.3.3.status,L3: Żyła 3: Potwierdzenie,plc,input,1,X45,1,0,bool,-,-,-,-,-,-,-
+L.3.4.status,L3: Żyła 4: Potwierdzenie,plc,input,1,X43,1,0,bool,-,-,-,-,-,-,-
+L.3.5.status,L3: Żyła 5: Potwierdzenie,plc,input,1,X44,1,0,bool,-,-,-,-,-,-,-
+L.3.6.status,L3: Żyła 6: Potwierdzenie,plc,input,1,X42,1,0,bool,-,-,-,-,-,-,-
+L.3.7.status,L3: Żyła 7: Potwierdzenie,plc,input,1,X46,1,0,bool,-,-,-,-,-,-,-
+,L4 - Łączówka 4 - LED niebieska,,,,,,,,,,,,,,
+L.4.aside,L4: Czujnik odłożenia,plc,input,1,1107,1,0,bool,-,-,-,-,-,-,-
+L.4.1.status,L4: Żyła 1: Potwierdzenie,plc,input,1,X50,1,0,bool,-,-,-,-,-,-,-
+L.4.2.status,L4: Żyła 2: Potwierdzenie,plc,input,1,X51,1,0,bool,-,-,-,-,-,-,-
+L.4.3.status,L4: Żyła 3: Potwierdzenie,plc,input,1,X55,1,0,bool,-,-,-,-,-,-,-
+L.4.4.status,L4: Żyła 4: Potwierdzenie,plc,input,1,X53,1,0,bool,-,-,-,-,-,-,-
+L.4.5.status,L4: Żyła 5: Potwierdzenie,plc,input,1,X54,1,0,bool,-,-,-,-,-,-,-
+L.4.6.status,L4: Żyła 6: Potwierdzenie,plc,input,1,X52,1,0,bool,-,-,-,-,-,-,-
+L.4.7.status,L4: Żyła 7: Potwierdzenie,plc,input,1,X56,1,0,bool,-,-,-,-,-,-,-
+,L5 - Łączówka 5 - zasilająca niebieska,,,,,,,,,,,,,,
+L.5.1.control,L5: Żyła 1: Załączenie,plc,output,1,Y20,1,1,bool,-,-,-,-,-,-,-
+L.5.2.control,L5: Żyła 2: Załączenie,plc,output,1,Y21,1,1,bool,-,-,-,-,-,-,-
+L.5.3.control,L5: Żyła 3: Załączenie,plc,output,1,Y25,1,1,bool,-,-,-,-,-,-,-
+L.5.4.control,L5: Żyła 4: Załączenie,plc,output,1,Y23,1,1,bool,-,-,-,-,-,-,-
+L.5.5.control,L5: Żyła 5: Załączenie,plc,output,1,Y24,1,1,bool,-,-,-,-,-,-,-
+L.5.6.control,L5: Żyła 6: Załączenie,plc,output,1,Y22,1,1,bool,-,-,-,-,-,-,-
+L.5.7.control,L5: Żyła 7: Załączenie,plc,output,1,Y26,1,1,bool,-,-,-,-,-,-,-
+,L6 - Łączówka 6 - końcowa czerwona,,,,,,,,,,,,,,
+L.6.aside,L6: Czujnik odłożenia,plc,input,1,1108,1,0,bool,-,-,-,-,-,-,-
+L.6.1.status,L6: Żyła 1: Potwierdzenie,plc,input,1,X60,1,0,bool,-,-,-,-,-,-,-
+L.6.2.status,L6: Żyła 2: Potwierdzenie,plc,input,1,X61,1,0,bool,-,-,-,-,-,-,-
+L.6.3.status,L6: Żyła 3: Potwierdzenie,plc,input,1,X65,1,0,bool,-,-,-,-,-,-,-
+L.6.4.status,L6: Żyła 4: Potwierdzenie,plc,input,1,X63,1,0,bool,-,-,-,-,-,-,-
+L.6.5.status,L6: Żyła 5: Potwierdzenie,plc,input,1,X64,1,0,bool,-,-,-,-,-,-,-
+L.6.6.status,L6: Żyła 6: Potwierdzenie,plc,input,1,X62,1,0,bool,-,-,-,-,-,-,-
+L.6.7.status,L6: Żyła 7: Potwierdzenie,plc,input,1,X66,1,0,bool,-,-,-,-,-,-,-
+,L7 - Łączówka 7 - LED czerwona,,,,,,,,,,,,,,
+L.7.aside,L7: Czujnik odłożenia,plc,input,1,1109,1,0,bool,-,-,-,-,-,-,-
+L.7.1.status,L7: Żyła 1: Potwierdzenie,plc,input,1,X70,1,0,bool,-,-,-,-,-,-,-
+L.7.2.status,L7: Żyła 2: Potwierdzenie,plc,input,1,X71,1,0,bool,-,-,-,-,-,-,-
+L.7.3.status,L7: Żyła 3: Potwierdzenie,plc,input,1,X75,1,0,bool,-,-,-,-,-,-,-
+L.7.4.status,L7: Żyła 4: Potwierdzenie,plc,input,1,X73,1,0,bool,-,-,-,-,-,-,-
+L.7.5.status,L7: Żyła 5: Potwierdzenie,plc,input,1,X74,1,0,bool,-,-,-,-,-,-,-
+L.7.6.status,L7: Żyła 6: Potwierdzenie,plc,input,1,X72,1,0,bool,-,-,-,-,-,-,-
+L.7.7.status,L7: Żyła 7: Potwierdzenie,plc,input,1,X76,1,0,bool,-,-,-,-,-,-,-
+,L8 - Łączówka 8 - LED czerwona,,,,,,,,,,,,,,
+L.8.aside,L8: Czujnik odłożenia,plc,input,1,1110,1,0,bool,-,-,-,-,-,-,-
+L.8.1.status,L8: Żyła 1: Potwierdzenie,plc,input,1,1088,1,0,bool,-,-,-,-,-,-,-
+L.8.2.status,L8: Żyła 2: Potwierdzenie,plc,input,1,1089,1,0,bool,-,-,-,-,-,-,-
+L.8.3.status,L8: Żyła 3: Potwierdzenie,plc,input,1,1093,1,0,bool,-,-,-,-,-,-,-
+L.8.4.status,L8: Żyła 4: Potwierdzenie,plc,input,1,1091,1,0,bool,-,-,-,-,-,-,-
+L.8.5.status,L8: Żyła 5: Potwierdzenie,plc,input,1,1092,1,0,bool,-,-,-,-,-,-,-
+L.8.6.status,L8: Żyła 6: Potwierdzenie,plc,input,1,1090,1,0,bool,-,-,-,-,-,-,-
+L.8.7.status,L8: Żyła 7: Potwierdzenie,plc,input,1,1094,1,0,bool,-,-,-,-,-,-,-
+,L9 - Łączówka 9 - LED czerwona,,,,,,,,,,,,,,
+L.9.aside,L9: Czujnik odłożenia,plc,input,1,1111,1,0,bool,-,-,-,-,-,-,-
+L.9.1.status,L9: Żyła 1: Potwierdzenie,plc,input,1,1096,1,0,bool,-,-,-,-,-,-,-
+L.9.2.status,L9: Żyła 2: Potwierdzenie,plc,input,1,1101,1,0,bool,-,-,-,-,-,-,-
+L.9.3.status,L9: Żyła 3: Potwierdzenie,plc,input,1,1098,1,0,bool,-,-,-,-,-,-,-
+L.9.4.status,L9: Żyła 4: Potwierdzenie,plc,input,1,1099,1,0,bool,-,-,-,-,-,-,-
+L.9.5.status,L9: Żyła 5: Potwierdzenie,plc,input,1,1100,1,0,bool,-,-,-,-,-,-,-
+L.9.6.status,L9: Żyła 6: Potwierdzenie,plc,input,1,1097,1,0,bool,-,-,-,-,-,-,-
+L.9.7.status,L9: Żyła 7: Potwierdzenie,plc,input,1,1102,1,0,bool,-,-,-,-,-,-,-
+,L10 - Łączówka 10 - końcowa czerwona,,,,,,,,,,,,,,
+L.10.1.control,L10: Żyła 1: Załączenie,plc,output,1,Y30,1,1,bool,-,-,-,-,-,-,-
+L.10.2.control,L10: Żyła 2: Załączenie,plc,output,1,Y31,1,1,bool,-,-,-,-,-,-,-
+L.10.3.control,L10: Żyła 3: Załączenie,plc,output,1,Y35,1,1,bool,-,-,-,-,-,-,-
+L.10.4.control,L10: Żyła 4: Załączenie,plc,output,1,Y33,1,1,bool,-,-,-,-,-,-,-
+L.10.5.control,L10: Żyła 5: Załączenie,plc,output,1,Y34,1,1,bool,-,-,-,-,-,-,-
+L.10.6.control,L10: Żyła 6: Załączenie,plc,output,1,Y32,1,1,bool,-,-,-,-,-,-,-
+L.10.7.control,L10: Żyła 7: Załączenie,plc,output,1,Y36,1,1,bool,-,-,-,-,-,-,-
+,Stany połączenia z urządzeniami,,,,,,,,,,,,,,
+masters.controlProcess,Stan połączenia z urządzeniami sterowania,-,virtual,-,-,0,0,bool,-,-,-,-,-,-,-
+masters.plc,Stan połączenia z PLC,plc,virtual,-,-,0,0,bool,-,-,-,-,-,-,-
+masters.tester,Stan połączenia z testerem GLP2-I,-,memory,-,-,1,1,bool,-,-,-,-,-,-,-

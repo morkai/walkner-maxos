@@ -1,0 +1,1 @@
+define(["app/nls/locale/en"],function(n){return{root:{"BREADCRUMBS:base":function(n){return"Diagnostics"}},pl:!0}});

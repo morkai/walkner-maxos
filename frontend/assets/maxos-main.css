@@ -1,0 +1,40 @@
+@import url("../vendor/bootstrap/css/bootstrap.css");
+@import url("../vendor/font-awesome/css/font-awesome.css");
+@import url("../vendor/select2/select2.css");
+@import url("./select2.css");
+@import url("../app/core/assets/main.css");
+@import url("../app/settings/assets/main.css");
+@import url("../app/events/assets/main.css");
+@import url("../app/users/assets/main.css");
+@import url("../app/updater/assets/main.css");
+@import url("../app/changelog/assets/main.css");
+@import url("../app/diagnostics/assets/main.css");
+@import url("../app/analytics/assets/main.css");
+@import url("../app/alarms/assets/main.css");
+@import url("../app/maxos/assets/main.css");
+
+#app-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -32px 0 0 -32px;
+  width: 64px;
+  height: 64px;
+  font-size: 64px;
+  text-align: center;
+  color: #0000ff;
+  text-shadow: 0 0 1px #999;
+}
+#app-loading.error {
+  color: red;
+}
+.navbar-brand.fa-cube {
+  background-image: url(./maxos-favicon256.png);
+  background-repeat: no-repeat;
+  background-size: 18px 18px;
+  background-position: center;
+  width: 46px;
+}
+.navbar-brand.fa-cube:before {
+  content: "\00a0";
+}

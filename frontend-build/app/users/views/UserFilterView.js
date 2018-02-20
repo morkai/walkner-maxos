@@ -1,0 +1,3 @@
+// Part of <https://miracle.systems/p/walkner-maxos> licensed under <CC BY-NC-SA 4.0>
+
+define(["app/core/views/FilterView","app/users/templates/filter"],function(e,a){"use strict";return e.extend({template:a,defaultFormData:{login:"",lastName:""},termToForm:{login:function(e,a,t){"regex"===a.name&&(t[e]=a.args[1].replace("^",""))},lastName:"login"},serializeFormToQuery:function(e){var a=this.$id("login").val().trim(),t=this.$id("lastName").val().trim();a.length&&e.push({name:"regex",args:["login","^"+a,"i"]}),t.length&&e.push({name:"regex",args:["lastName","^"+t,"i"]})}})});

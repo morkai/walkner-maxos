@@ -1,0 +1,3 @@
+// Part of <https://miracle.systems/p/walkner-maxos> licensed under <CC BY-NC-SA 4.0>
+
+define(["app/router","app/viewport","./MaxosTest","./MaxosTestCollection","./pages/DashboardPage","./pages/TestListPage","./pages/TestDetailsPage","i18n!app/nls/maxos"],function(e,s,a,o,t,n,i){"use strict";e.map("/maxos",function(){s.showPage(new t)}),e.map("/maxos/tests",function(e){s.showPage(new n({collection:new o(null,{rqlQuery:e.rql})}))}),e.map("/maxos/tests/:id",function(e){s.showPage(new i({model:new a({_id:e.params.id})}))})});

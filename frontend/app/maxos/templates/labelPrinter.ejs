@@ -1,0 +1,35 @@
+<form class="maxos-labelPrinter" autocomplete="off">
+  <div class="form-group">
+    <label for="<%- idPrefix %>-orderNo" class="control-label"><%- t('maxos', 'labelPrinter:orderNo') %></label>
+    <input id="<%- idPrefix %>-orderNo" class="form-control" type="text" value="<%- orderNo %>" data-vkb="numeric" required maxlength="9" pattern="^[0-9]{9}$" autocomplete="off">
+  </div>
+  <div class="form-group">
+    <label for="<%- idPrefix %>-items" class="control-label"><%- t('maxos', 'labelPrinter:items') %></label>
+    <input id="<%- idPrefix %>-items" class="form-control" type="text" value="<%- items %>" data-vkb="numeric range" required autocomplete="off">
+    <p class="help-block"><%- t('maxos', 'labelPrinter:items:help') %></p>
+  </div>
+  <div class="maxos-labelPrinter-kinds">
+    <% ['inside', 'outside'].forEach(function(k) { %>
+    <div class="maxos-labelPrinter-kind">
+      <label><input type="checkbox" name="kinds" value="<%- k %>" required><span><%- t('maxos', 'labelPrinter:kinds:' + k) %></span></label>
+    </div>
+    <% }) %>
+  </div>
+  <div class="maxos-labelPrinter-progress">
+    <div class="form-group">
+      <label class="control-label"><%- t('maxos', 'labelPrinter:todo') %></label>
+      <p id="<%- idPrefix %>-todo" class="form-control-static">0</p>
+    </div>
+    <div class="form-group">
+      <label class="control-label"><%- t('maxos', 'labelPrinter:done') %></label>
+      <p id="<%- idPrefix %>-done" class="form-control-static">0</p>
+    </div>
+  </div>
+  <div class="form-actions maxos-labelPrinter-actions">
+    <button id="<%- idPrefix %>-submit" type="submit" class="btn btn-primary"><%- t('maxos', 'labelPrinter:submit') %></button>
+    <button type="button" class="cancel btn btn-link"><%- t('core', 'ACTION_FORM:BUTTON:cancel') %></button>
+    <div id="<%- idPrefix %>-progressBar" class="progress">
+      <div class="progress-bar progress-bar-striped active" role="progressbar" style="width: 100%"></div>
+    </div>
+  </div>
+</form>

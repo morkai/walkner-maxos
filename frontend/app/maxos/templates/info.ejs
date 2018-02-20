@@ -1,0 +1,22 @@
+<div class="maxos-info" data-state="<%- state %>">
+  <div id="<%- idPrefix %>-changeOrder" class="maxos-prop" data-property="orderNo">
+    <div class="maxos-prop-label"><%- t('maxos', 'info:orderNo') %></div>
+    <a class="maxos-prop-value <%- canChangeOrder ? '' : 'disabled' %>"><%= info.orderNo %></a>
+  </div>
+  <div class="maxos-prop" data-property="materialNumber">
+    <div class="maxos-prop-label"><%- t('maxos', 'info:materialNumber') %></div>
+    <div class="maxos-prop-value"><%= info.materialNumber %></div>
+  </div>
+  <div class="maxos-prop" data-property="productName">
+    <div class="maxos-prop-label"><%- t('maxos', 'info:productName') %></div>
+    <div class="maxos-prop-value"><%= info.productName %></div>
+  </div>
+  <div class="maxos-prop" data-property="quantity">
+    <div class="maxos-prop-label"><%- t('maxos', 'info:quantity') %></div>
+    <div class="maxos-prop-value"><%= info.quantity %></div>
+  </div>
+  <div id="<%- idPrefix %>-printLabels" class="maxos-prop" data-property="lastSerialNumber">
+    <div class="maxos-prop-label"><%- t('maxos', 'info:lastSerialNumber') %></div>
+    <a class="maxos-prop-value <%- canPrintLabels ? '' : 'disabled' %>"><%= info.lastSerialNumber %></a>
+  </div>
+</div>

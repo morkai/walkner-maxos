@@ -1,0 +1,99 @@
+<div class="program-details">
+  <div class="panel panel-primary">
+    <div class="panel-heading"><%- t('program', 'PANEL:TITLE:details') %></div>
+    <div class="panel-details row">
+      <div class="col-md-6">
+        <div class="props first">
+          <div class="prop">
+            <div class="prop-name"><%- t('program', 'PROPERTY:description') %></div>
+            <div class="prop-value"><%= model.description %></div>
+          </div>
+          <div class="prop">
+            <div class="prop-name"><%- t('program', 'PROPERTY:chamberCount') %></div>
+            <div class="prop-value"><%- model.chamberCount %></div>
+          </div>
+          <div class="prop">
+            <div class="prop-name"><%- t('program', 'PROPERTY:tempController1') %></div>
+            <div class="prop-value"><%- model.tempController1 %></div>
+          </div>
+          <div class="prop">
+            <div class="prop-name"><%- t('program', 'PROPERTY:tempController2') %></div>
+            <div class="prop-value"><%- model.tempController2 %></div>
+          </div>
+          <div class="prop">
+            <div class="prop-name"><%- t('program', 'PROPERTY:stopOnCoverOpen') %></div>
+            <div class="prop-value"><%- t('core', 'BOOL:' + model.stopOnCoverOpen) %></div>
+          </div>
+          <div class="prop">
+            <div class="prop-name"><%- t('program', 'PROPERTY:repeatCount') %></div>
+            <div class="prop-value"><%- model.repeatCount || 1 %></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="props">
+          <div class="prop">
+            <div class="prop-name"><%- t('program', 'PROPERTY:startedAt') %></div>
+            <div class="prop-value"><%- model.startedAt %></div>
+          </div>
+          <div class="prop">
+            <div class="prop-name"><%- t('program', 'PROPERTY:finishedAt') %></div>
+            <div class="prop-value"><%- model.finishedAt %></div>
+          </div>
+          <div class="prop">
+            <div class="prop-name"><%- t('program', 'PROPERTY:elapsedTime') %></div>
+            <div class="prop-value"><%- model.elapsedTime %></div>
+          </div>
+          <div class="prop">
+            <div class="prop-name"><%- t('program', 'PROPERTY:status') %></div>
+            <div class="prop-value"><%- model.status %></div>
+          </div>
+          <div class="prop">
+            <div class="prop-name"><%- t('program', 'PROPERTY:reason') %></div>
+            <div class="prop-value"><%- model.reason || '-' %></div>
+          </div>
+          <div class="prop">
+            <div class="prop-name"><%- t('program', 'PROPERTY:error') %></div>
+            <div class="prop-value"><%- model.error || '-' %></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% model.steps.forEach(function(step, i) { %>
+  <div class="panel panel-<%- step.mode === 'heating' ? 'danger' : 'info' %>">
+    <div class="panel-heading"><%- i + 1 %></div>
+    <div class="panel-details">
+      <div class="props first">
+        <div class="prop">
+          <div class="prop-name"><%- t('program', 'PROPERTY:steps:duration') %></div>
+          <div class="prop-value"><%- step.duration %></div>
+        </div>
+        <div class="prop">
+          <div class="prop-name"><%- t('program', 'PROPERTY:steps:startTemperature') %></div>
+          <div class="prop-value"><%- step.startTemperature %></div>
+        </div>
+        <% if (step.mode === 'heating') { %>
+        <div class="prop">
+          <div class="prop-name"><%- t('program', 'PROPERTY:steps:temperature') %></div>
+          <div class="prop-value"><%- step.temperature %></div>
+        </div>
+        <% } else { %>
+        <div class="prop">
+          <div class="prop-name"><%- t('program', 'PROPERTY:steps:coverHeight') %></div>
+          <div class="prop-value"><%- step.coverHeight %></div>
+        </div>
+        <div class="prop">
+          <div class="prop-name"><%- t('program', 'PROPERTY:steps:fan') %></div>
+          <div class="prop-value"><%- t('core', 'BOOL:' + !!step.fan) %></div>
+        </div>
+        <% } %>
+        <div class="prop">
+          <div class="prop-name"><%- t('program', 'PROPERTY:steps:externalPowerLoad') %></div>
+          <div class="prop-value"><%- t('core', 'BOOL:' + !!step.externalPowerLoad) %></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% }) %>
+</div>

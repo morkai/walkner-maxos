@@ -1,0 +1,27 @@
+.program-form-stepMode {
+  display: inline-block;
+  width: auto;
+}
+.program-form-steps > .panel {
+  margin-bottom: 7px;
+}
+.program-form-addStepGroup {
+  position: relative;
+  display: inline-block;
+}
+.program-form-addStepGroup > .btn {
+  position: relative;
+  z-index: 1;
+}
+.program-form-stepValidity {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  border: none;
+  background: #FFF;
+  cursor: default;
+}
+.program-form-stepValidity:focus {
+  outline: none;
+}

@@ -1,0 +1,13 @@
+<div class="maxos">
+  <div id="<%- idPrefix %>-info" class="maxos-info-container"></div>
+  <div id="<%- idPrefix %>-indicators" class="maxos-indicators-container"></div>
+  <div id="<%- idPrefix %>-message" class="maxos-message-container"></div>
+  <div class="maxos-parentControls">
+    <button data-parent-action="goToResults" class="btn btn-default" title="<%- t('maxos', 'parent:goToResults') %>"><i class="fa fa-list-alt"></i></button>
+    <% if (embedded) { %>
+    <button data-parent-action="switchApps" class="btn btn-default" title="<%- t('maxos', 'parent:switchApps') %>"><i class="fa fa-window-restore"></i></button>
+    <button data-parent-action="reboot" class="btn btn-default" title="<%- t('maxos', 'parent:reboot') %>"><i class="fa fa-refresh"></i></button>
+    <button data-parent-action="shutdown" class="btn btn-default" title="<%- t('maxos', 'parent:shutdown') %>"><i class="fa fa-power-off"></i></button>
+    <% } %>
+  </div>
+</div>

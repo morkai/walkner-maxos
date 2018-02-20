@@ -1,0 +1,3 @@
+// Part of <https://miracle.systems/p/walkner-maxos> licensed under <CC BY-NC-SA 4.0>
+
+define(["underscore","app/core/View","app/alarms/templates/severityActionForm","i18n!app/nls/alarms"],function(i,e,t){"use strict";var r=e.extend({template:t});return r.prototype.initialize=function(){this.idPrefix=i.uniqueId("alarms-form-action-severity"),this.fieldNamePrefix=(this.options.kind||"start")+"Actions["+this.options.index+"]"},r.prototype.serialize=function(){return{idPrefix:this.idPrefix,fieldNamePrefix:this.fieldNamePrefix}},r});

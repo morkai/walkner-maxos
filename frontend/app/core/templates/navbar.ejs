@@ -1,0 +1,48 @@
+<div class="navbar-inner">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="sr-only"><%- t('core', 'NAVBAR:TOGGLE') %></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand fa fa-cube" href="#"></a>
+  </div>
+  <div class="collapse navbar-collapse">
+    <ul class="nav navbar-nav">
+      <li><a href="#maxos"><%- t('core', 'NAVBAR:DASHBOARD') %></a></li>
+      <li data-online data-module><a href="#maxos/tests"><%- t('core', 'NAVBAR:TESTS') %></a></li>
+      <li data-online data-privilege="EVENTS:VIEW" data-module><a href="#events"><%- t('core', 'NAVBAR:EVENTS') %></a></li>
+      <li data-online data-privilege="ALARMS:VIEW" data-module="alarms/frontend"><a href="#alarms"><%- t('core', 'NAVBAR:ALARMS') %></a></li>
+      <li data-online data-privilege="USERS:VIEW" data-module><a href="#users"><%- t('core', 'NAVBAR:USERS') %></a></li>
+      <li data-online data-privilege="DIAGNOSTICS:VIEW" data-module class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown">
+          <%- t('core', 'NAVBAR:DIAGNOSTICS') %>
+          <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="#diagnostics/tags"><%- t('core', 'NAVBAR:DIAGNOSTICS:TAGS') %></a></li>
+        </ul>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown navbar-account-dropdown">
+        <a href="#account" class="dropdown-toggle" data-toggle="dropdown">
+          <i class="fa fa-user fa-lg navbar-account-status"></i>
+          <%- user.getLabel() %>
+          <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+          <li data-online data-loggedin><a href="#users/<%- user.data._id %>"><%- t('core', 'NAVBAR:MY_ACCOUNT') %></a></li>
+          <li class="divider"></li>
+          <li class="dropdown-header"><%- t('core', 'NAVBAR:UI_LOCALE') %></li>
+          <li><a class="navbar-account-locale" href="#" data-locale="pl"><%- t('core', 'NAVBAR:LOCALE_PL') %></a></li>
+          <li><a class="navbar-account-locale" href="#" data-locale="en"><%- t('core', 'NAVBAR:LOCALE_US') %></a></li>
+          <li class="divider"></li>
+          <li data-online data-loggedin="0"><a class="navbar-account-logIn" href="#login"><%- t('core', 'NAVBAR:LOG_IN') %></a></li>
+          <li data-online data-loggedin><a class="navbar-account-logOut" href="/logout"><%- t('core', 'NAVBAR:LOG_OUT') %></a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>

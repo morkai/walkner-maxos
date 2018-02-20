@@ -1,0 +1,24 @@
+{
+  "BREADCRUMBS:base": "Diagnostyka",
+  "BREADCRUMBS:tags": "Tagi",
+
+  "TAGS_HEADER_NAME": "Nazwa",
+  "TAGS_HEADER_DESCRIPTION": "Opis",
+  "TAGS_HEADER_MASTER": "Urządzenie",
+  "TAGS_HEADER_VALUE": "Aktualna wartość",
+  "TAGS_HEADER_UNIT": "Jednostka",
+  "TAGS_HEADER_TYPE": "Typ",
+  "TAGS_HEADER_KIND": "Rodzaj",
+  "TAGS_HEADER_ADDRESS": "Adres",
+
+  "TAG_WRITE_FAILED": "Nie udało się zmienić <em>{tag}</em>: <em>{reason}</em>.",
+  "TAG_WRITE_NO_PERM": "brak uprawnień",
+  "TAG_WRITE_INVALID_VALUE": "nieprawidłowa wartość",
+  "TAG_WRITE_UNKNOWN": "nieznany tag",
+  "TAG_WRITE_NOT_WRITABLE": "zmiana niemożliwa",
+  "TAG_WRITE_ILLEGAL": "zmiana niedozwolona",
+  "TAG_WRITE_UNSUPPORTED": "zmiana nie wspierana",
+  "TAG_WRITE_NO_BIT_MASK": "brak maski bitowej",
+  "TAG_WRITE_NO_REFERENCE_TAG": "brak taga referencyjnego",
+  "TAG_WRITE_UNKNOWN_REFERENCE_TAG": "nieznany tag referencyjny"
+}

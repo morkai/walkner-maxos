@@ -1,0 +1,36 @@
+<form class="well filter-form">
+  <div class="form-group">
+    <label><%- t('maxos', 'PROPERTY:status') %></label>
+    <div id="<%- idPrefix %>-status" class="btn-group filter-btn-group maxos-filter-status" data-toggle="buttons">
+      <% ['success', 'failure'].forEach(function(status) { %>
+      <label class="btn btn-default maxos-filter-<%- status %>"><input type="radio" name="status" value="<%- status %>"> <%- t('maxos', 'status:' + status) %></label>
+      <% }) %>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="<%- idPrefix %>-from-date"><%- t('core', 'filter:date:from') %></label>
+    <div id="<%- idPrefix %>-from" class="form-group-datetime">
+      <input id="<%- idPrefix %>-from-date" class="form-control" name="from-date" type="date" placeholder="YYYY-MM-DD">
+      <input id="<%- idPrefix %>-from-time" class="form-control" name="from-time" type="time" placeholder="hh:mm">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="<%- idPrefix %>-to-date"><%- t('core', 'filter:date:to') %></label>
+    <div id="<%- idPrefix %>-to" class="form-group-datetime">
+      <input id="<%- idPrefix %>-to-date" class="form-control" name="to-date" type="date" placeholder="YYYY-MM-DD">
+      <input id="<%- idPrefix %>-to-time" class="form-control" name="to-time" type="time" placeholder="hh:mm">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="<%- idPrefix %>-orderNo"><%- t('maxos', 'PROPERTY:orderNo') %></label>
+    <input id="<%- idPrefix %>-orderNo" class="form-control" name="orderNo" type="text" maxlength="9" style="width: 100px">
+  </div>
+  <div class="form-group">
+    <label for="<%- idPrefix %>-itemNumber"><%- t('maxos', 'PROPERTY:itemNumber') %></label>
+    <input id="<%- idPrefix %>-itemNumber" class="form-control" name="itemNumber" type="number" min="1" max="9999" style="width: 75px">
+  </div>
+  <%- renderLimit() %>
+  <div class="form-group filter-actions">
+    <button type="submit" class="btn btn-default"><i class="fa fa-filter"></i><span><%= t('maxos', 'filter:submit') %></span></button>
+  </div>
+</form>

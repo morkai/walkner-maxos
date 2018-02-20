@@ -1,0 +1,83 @@
+{
+  "root": {
+    "BREADCRUMBS:browse": "Users",
+    "BREADCRUMBS:addForm": "Adding",
+    "BREADCRUMBS:editForm": "Editing",
+    "BREADCRUMBS:myAccount": "My account",
+    "BREADCRUMBS:ACTION_FORM:delete": "Deleting",
+    "breadcrumbs:logIn": "Log in form",
+
+    "MSG:LOADING_FAILURE": "Failed to load the users.",
+    "MSG:LOADING_SINGLE_FAILURE": "Failed to load the user.",
+    "MSG:DELETED": "User <em>{label}</em> was deleted.",
+    "MSG:SYNCED": "Users were synchronized successfully :)",
+    "MSG:SYNC_FAILURE": "Failed to synchronize the users.",
+
+    "PAGE_ACTION:add": "Add user",
+    "PAGE_ACTION:edit": "Edit user",
+    "PAGE_ACTION:editAccount": "Edit account",
+    "PAGE_ACTION:delete": "Delete user",
+    "PAGE_ACTION:sync": "Synchronize with the AC database",
+
+    "PANEL:TITLE:details:basic": "Basic information",
+    "PANEL:TITLE:details:contact": "Concat information",
+    "PANEL:TITLE:details:extra": "Additional information",
+    "PANEL:TITLE:details:privileges": "Privileges",
+    "PANEL:TITLE:addForm": "Add user form",
+    "PANEL:TITLE:editForm": "Edit user form",
+
+    "filter:submit": "Filter users",
+
+    "PROPERTY:login": "Login",
+    "PROPERTY:password": "Password",
+    "PROPERTY:newPassword": "New password",
+    "PROPERTY:password2": "Confirm password",
+    "PROPERTY:email": "E-mail address",
+    "PROPERTY:privileges": "Privileges",
+    "PROPERTY:name": "Name",
+    "PROPERTY:firstName": "First name",
+    "PROPERTY:lastName": "Last name",
+    "PROPERTY:gender": "Gender",
+    "PROPERTY:mobile": "Mobile phone numbers",
+
+    "ACTIVE:true": "Yes",
+    "ACTIVE:false": "No",
+
+    "gender:female": "Female",
+    "gender:male": "Male",
+
+    "FORM:ACTION:add": "Add user",
+    "FORM:ACTION:edit": "Edit user",
+    "FORM:ERROR:passwordMismatch": "The specified password do not match.",
+    "FORM:ERROR:addFailure": "Failed to add the user.",
+    "FORM:ERROR:editFailure": "Failed to edit the user.",
+    "FORM:HELP:password": "Enter a new password only if you want to change the current password.",
+    "FORM:mobile:from": "available from",
+    "FORM:mobile:to": "to",
+    "FORM:mobile:empty": "No mobile numbers defined.",
+    "FORM:mobile:item": "{number} from {fromTime} to {toTime}",
+    "NO_DATA:aors": "All",
+    "NO_DATA:company": "Unspecified",
+    "NO_DATA:prodFunction": "Unspecified",
+    "NO_DATA:vendor": "All",
+
+    "DETAILS:mobile:item": "{number} from {fromTime} to {toTime}",
+
+    "ACTION_FORM:DIALOG_TITLE:delete": "User deletion confirmation",
+    "ACTION_FORM:BUTTON:delete": "Delete user",
+    "ACTION_FORM:MESSAGE:delete": "Are you sure you want to delete the chosen user?",
+    "ACTION_FORM:MESSAGE_SPECIFIC:delete": "Are you sure you want to delete the <em>{label}</em> user?",
+    "ACTION_FORM:MESSAGE_FAILURE:delete": "Failed to delete the user.",
+
+    "PRIVILEGE:EVENTS:VIEW": "Events: view",
+    "PRIVILEGE:EVENTS:MANAGE": "Events: manage",
+    "PRIVILEGE:USERS:VIEW": "Users: view",
+    "PRIVILEGE:USERS:MANAGE": "Users: manage",
+    "PRIVILEGE:DICTIONARIES:VIEW": "Dictionaries: view",
+    "PRIVILEGE:DICTIONARIES:MANAGE": "Dictionaries: manage",
+
+    "select2:placeholder": "Search by last name...",
+    "select2:users:system": "System"
+  },
+  "pl": true
+}

@@ -1,0 +1,55 @@
+{
+  "BREADCRUMBS:browse": "Wyniki",
+
+  "MSG:LOADING_FAILURE": "Ładowanie wyników nie powiodło się.",
+  "MSG:LOADING_SINGLE_FAILURE": "Ładowanie wyniku nie powiodło się.",
+
+  "PANEL:TITLE:details": "Szczegóły wyniku",
+
+  "filter:submit": "Filtruj wyniki",
+
+  "PROPERTY:description": "Krótki opis",
+  "PROPERTY:status": "Status",
+  "PROPERTY:startedAt": "Czas rozpoczęcia",
+  "PROPERTY:finishedAt": "Czas zakończenia",
+  "PROPERTY:elapsedTime": "Czas trwania",
+  "PROPERTY:reason": "Powód zakończenia",
+  "PROPERTY:error": "Błąd",
+  "PROPERTY:chamberCount": "Ilość komór grzewczych",
+  "PROPERTY:tempController1": "Główny czujnik temperatury dla komory 1",
+  "PROPERTY:tempController2": "Główny czujnik temperatury dla komory 2",
+  "PROPERTY:stopOnCoverOpen": "Zatrzymaj po otwarciu pokrywy",
+  "PROPERTY:repeatCount": "Ilość powtórzeń",
+  "PROPERTY:steps": "Kroki",
+  "PROPERTY:steps:mode": "Tryb",
+  "PROPERTY:steps:duration": "Czas trwania",
+  "PROPERTY:steps:temperature": "Temperatura [°C]",
+  "PROPERTY:steps:startTemperature": "Temperatura odliczania czasu trwania [°C]",
+  "PROPERTY:steps:coverHeight": "Czas otwierania pokrywy [s]",
+  "PROPERTY:steps:fan": "Wentylator",
+  "PROPERTY:steps:externalPowerLoad": "Obciążenie 16A",
+
+  "chamberCount:1": "Jedna",
+  "chamberCount:2": "Dwie",
+
+  "mode:heating": "Nagrzewanie",
+  "mode:cooling": "Chłodzenie",
+
+  "status:idle": "Przygotowywany",
+  "status:running": "Uruchomiony",
+  "status:failure": "Błąd",
+  "status:success": "Sukces",
+
+  "reason:DC24V": "Brak zasilania.",
+  "reason:CANCEL": "Anulowano wykonywanie programu.",
+  "reason:ESTOP": "Wciśnięto E-STOP.",
+  "reason:NO_LINK": "Brak złącza.",
+  "reason:MAX_T": "Osiągnięto maksymalną dopuszczalną temperaturę.",
+  "reason:NO_LIGHTS": "Nie udało się włączyć podświetlenia.",
+  "reason:RUNNING_FANS": "Wykryto uruchomione wentylatory podczas nagrzewania.",
+  "reason:OPEN_COVER": "Wykryto otwartą pokrywę podczas nagrzewania.",
+  "reason:OPENING_COVERS": "Wykryto otwieranie pokrywy podczas nagrzewania.",
+  "reason:COVER_OPENING_FAILURE": "Błąd podczas otwierania pokrywy.",
+  "reason:COVER_CLOSING_FAILURE": "Błąd podczas zamykania pokrywy.",
+  "reason:COOLING_FAILURE": "Błąd podczas wykonywania kroku chłodzenia."
+}

@@ -1,0 +1,1 @@
+define(["app/nls/locale/en"],function(n){return{root:{"breadcrumbs:browse":function(n){return"Changelog"},showMore:function(n){return"Show more..."},showAll:function(n){return"Show all..."}},pl:!0}});

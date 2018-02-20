@@ -1,0 +1,1 @@
+define(["app/nls/locale/en"],function(n){return{root:{"BREADCRUMBS:browse":function(n){return"Results"}},pl:!0}});

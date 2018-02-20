@@ -1,0 +1,90 @@
+<div class="maxos-details">
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="panel panel-<%- model.className %>">
+        <div class="panel-heading"><%- t('maxos', 'PANEL:TITLE:details:test') %></div>
+        <div class="panel-details">
+          <div class="props first">
+            <% [
+              'status',
+              'reason',
+              'error',
+              'serialNumber',
+              'itemNumber',
+              'startedAt',
+              'finishedAt',
+              'elapsedTime'
+              ].forEach(function(prop) { %>
+            <div class="prop">
+              <div class="prop-name"><%- t('maxos', 'PROPERTY:' + prop) %></div>
+              <div class="prop-value"><%= model[prop] || '-' %></div>
+            </div>
+            <% }) %>
+            <% [
+              'cables',
+              'connectors',
+              'cores'
+              ].forEach(function(prop) { %>
+            <div class="prop">
+              <div class="prop-name"><%- t('maxos', 'PROPERTY:' + prop) %></div>
+              <div class="prop-value"><%= model.order[prop] %></div>
+            </div>
+            <% }) %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading"><%- t('maxos', 'PANEL:TITLE:details:order') %></div>
+        <div class="panel-details">
+          <div class="props first">
+            <div class="prop">
+              <div class="prop-name"><%- t('maxos', 'PROPERTY:orderNo') %></div>
+              <div class="prop-value"><%= model.order._id %></div>
+            </div>
+            <% [
+              'materialNumber',
+              'productName',
+              'productFamily',
+              'quantityInBox',
+              'quantityInOrder',
+              'specialDesignation',
+              'commercialDesignation',
+              'additionalInformation',
+              'voltage',
+              'ipFactorValue',
+              'factoryCode',
+              'nonPhilipsCode',
+              'dateCode',
+              'eocCode',
+              'ean1',
+              'ean1Box',
+              'logoCodes'
+              ].forEach(function(prop) { %>
+            <div class="prop">
+              <div class="prop-name"><%- t('maxos', 'PROPERTY:' + prop) %></div>
+              <div class="prop-value"><%= model.order[prop] || '-' %></div>
+            </div>
+            <% }) %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="panel panel-default maxos-details-messages is-colored">
+        <div class="panel-heading"><%- t('maxos', 'PANEL:TITLE:details:messages') %></div>
+        <table class="table table-condensed table-hover">
+          <tbody>
+          <% model.messages.forEach(function(message) { %>
+          <tr class="<%- message.severity %>">
+            <td class="is-min"><%- message.date %></td>
+            <td><%- message.text %></td>
+          </tr>
+          <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+.idea
+node_modules
+build
+backend-build
+config/production
+config/development
+config/vps
+config/*.pem

@@ -1,0 +1,5 @@
+// Copyright (c) 2014, Łukasz Walukiewicz <lukasz@walukiewicz.eu>. Some Rights Reserved.
+// Licensed under CC BY-NC-SA 4.0 <http://creativecommons.org/licenses/by-nc-sa/4.0/>.
+// Part of the walkner-hydro project <http://lukasz.walukiewicz.eu/p/walkner-hydro>
+
+define(["../router","../user","../viewport","../data/controller","../tags/TagValueCollection","./pages/ChartsPage","./pages/ChangesPage","./pages/TagChangesPage","i18n!app/nls/analytics","i18n!app/nls/tags"],function(a,e,n,t,s,l,g,c){"use strict";var o=e.auth("ANALYTICS:VIEW");a.map("/analytics/charts",o,function(a){n.showPage(new l({rqlQuery:a.rql}))}),a.map("/analytics/changes",o,function(){n.showPage(new g({collection:t}))}),a.map("/analytics/changes/:tag",o,function(a){n.showPage(new c({collection:new s(null,{tag:a.params.tag,rqlQuery:a.rql})}))})});

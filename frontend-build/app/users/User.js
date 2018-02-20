@@ -1,0 +1,3 @@
+// Part of <https://miracle.systems/p/walkner-maxos> licensed under <CC BY-NC-SA 4.0>
+
+define(["../data/loadedModules","../core/Model","./util/decorateUser"],function(e,t,i){"use strict";return t.extend({urlRoot:"/users",clientUrlRoot:"#users",topicPrefix:"users",privilegePrefix:"USERS",nlsDomain:"users",labelAttribute:"login",initialize:function(){Array.isArray(this.get("privileges"))||this.set("privileges",[])},getLabel:function(){var e=this.get("lastName")||"",t=this.get("firstName")||"";return e.length&&t.length?e+" "+t:this.get("login")},url:function(){var i=t.prototype.url.apply(this,arguments);return this.isNew()||!e.isLoaded("vendors")?i:i+"?populate(vendor)"},serialize:function(){return i(this)}})});
