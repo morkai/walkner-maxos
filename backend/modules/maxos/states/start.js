@@ -7,12 +7,19 @@ const step = require('h5.step');
 
 module.exports = function(app, module, done)
 {
+  const unwired = module.tags.get('program.cables') === -1;
+  const safetyTestDisabled = module.tags.get('safetyTest.disabled', false);
+
   step(
     function()
     {
       module.test.messages = [];
 
-      if (safetyTestDisabled())
+      if (!unwired)
+      {
+        module.message('UNWIRED:STARTING', {severity: 'warning'}, this.group());
+      }
+      else if (safetyTestDisabled)
       {
         module.message('STARTING_THROUGH_WIRE_TEST', {severity: 'warning'}, this.group());
       }
@@ -38,7 +45,11 @@ module.exports = function(app, module, done)
 
         module.tags.set('program.state', 'failure', this.group());
       }
-      else if (safetyTestDisabled())
+      else if (unwired)
+      {
+        module.tags.set('program.state', 'serialNumber', this.next());
+      }
+      else if (safetyTestDisabled)
       {
         module.tags.set('program.state', 'throughWireTest', this.next());
       }
@@ -57,9 +68,4 @@ module.exports = function(app, module, done)
       done();
     }
   );
-
-  function safetyTestDisabled()
-  {
-    return module.tags.get('safetyTest.disabled', false);
-  }
 };

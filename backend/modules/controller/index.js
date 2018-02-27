@@ -260,7 +260,7 @@ exports.start = function startControllerModule(app, module)
   {
     const {headers, user} = socket.handshake;
 
-    if (user && (user.super || _.includes(user.privileges, 'SETTINGS:MANAGE')))
+    if (user && (user.super || user.local || _.includes(user.privileges, 'SETTINGS:MANAGE')))
     {
       return true;
     }

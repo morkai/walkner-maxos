@@ -35,7 +35,7 @@ module.exports = function setUpMaxosRoutes(app, module)
 
   function canChangeOrder(req, res, next)
   {
-    if (isEmbeddedUser(req) || userModule.isAllowedTo(req.session.user, 'MAXOS:MANAGE:CHANGE_ORDER'))
+    if (isEmbeddedUser(req) || userModule.isAllowedTo(req.session.user, [['LOCAL'], ['MAXOS:MANAGE:CHANGE_ORDER']]))
     {
       return next();
     }
@@ -45,7 +45,7 @@ module.exports = function setUpMaxosRoutes(app, module)
 
   function canPrintLabels(req, res, next)
   {
-    if (isEmbeddedUser(req) || userModule.isAllowedTo(req.session.user, 'MAXOS:MANAGE:PRINT_LABELS'))
+    if (isEmbeddedUser(req) || userModule.isAllowedTo(req.session.user, [['LOCAL'], ['MAXOS:MANAGE:PRINT_LABELS']]))
     {
       return next();
     }
@@ -354,9 +354,13 @@ module.exports = function setUpMaxosRoutes(app, module)
           }
         }
 
+        const productName = resolveProductName(sapOrder);
+        const unwired = cables.length === 0
+          && (/unwired/i.test(productName) || /unwired/i.test(zlfOrder.commercial_designation));
+
         res.json({
           _id: sapOrder._id,
-          productName: resolveProductName(sapOrder),
+          productName,
           productFamily: zlfOrder.product_family_name,
           materialNumber: zlfOrder.material_number.replace(/^0+/, ''),
           specialDesignation: zlfOrder.special_designation,
@@ -373,9 +377,9 @@ module.exports = function setUpMaxosRoutes(app, module)
           ean1: zlfOrder.ean1_barcode,
           ean1Box: zlfOrder.ean1_barcode_box,
           logoCodes,
-          cables: cables.length,
-          connectors: cables.length ? cables[0].connectors : 0,
-          cores: cables.length ? cables[0].cores : 0
+          cables: unwired ? -1 : cables.length,
+          connectors: unwired ? -1 : (cables.length ? cables[0].connectors : 0),
+          cores: unwired ? -1 : (cables.length ? cables[0].cores : 0)
         });
       }
     );

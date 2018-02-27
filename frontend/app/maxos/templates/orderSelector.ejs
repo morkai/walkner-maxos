@@ -8,9 +8,9 @@
       <div class="form-group">
         <label for="<%- idPrefix %>-cables" class="control-label"><%- t('maxos', 'orderSelector:cables') %></label>
         <div class="maxos-orderSelector-radios">
-          <% [1, 2].forEach(function(n) { %>
+          <% [-1, 1, 2].forEach(function(n) { %>
           <div class="maxos-orderSelector-radio">
-            <label><input type="radio" name="cables" required value="<%- n %>"><span><%- n %></span></label>
+            <label><input type="radio" name="cables" required value="<%- n %>"><span><%- Math.max(0, n) %></span></label>
           </div>
           <% }) %>
         </div>

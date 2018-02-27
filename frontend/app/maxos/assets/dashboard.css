@@ -63,6 +63,11 @@
   margin: 0 auto;
   text-align: center;
 }
+.maxos-indicators-empty {
+  font-size: 98px;
+  line-height: 1.4;
+  text-shadow: 1px 1px 1px #ccc;
+}
 .maxos-cable {
   display: flex;
   margin-top: 45px;

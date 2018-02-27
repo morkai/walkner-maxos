@@ -27,7 +27,8 @@ define([
 
     isEmbedded: function()
     {
-      return window !== window.parent && window.navigator.userAgent.indexOf('X11; Linux') !== -1;
+      return window.location.hostname === 'localhost'
+        || (window !== window.parent && window.navigator.userAgent.indexOf('X11; Linux') !== -1);
     },
 
     changeOrder: function()

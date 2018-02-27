@@ -10,6 +10,8 @@
   "info:quantity": "Ilość",
   "info:lastSerialNumber": "Ostatni nr seryjny",
 
+  "indicators:empty": "Zlecenie bez<br>testu oprzewodowania",
+
   "orderSelector:title": "Wybór zlecenia produkcyjnego",
   "orderSelector:orderNo": "Nr zlecenia",
   "orderSelector:recentOrders": "Ostatnie zlecenia",
@@ -99,7 +101,6 @@
   "message:CONTACTORS_FAILURE": "Nie udało się poprawnie załączyć styczników!",
   "message:SETTING_SAFETY_TEST": "Wgrywanie programu do testera PE...",
   "message:SETTING_SAFETY_TEST_FAILURE": "Nie udało się wgrać programu do testera PE:<br>{error}",
-  "message:MISSING_SAFETY_TEST": "Test PE zniknął?!?",
   "message:RUNNING_SAFETY_TEST": "Wykonywanie testu bezpieczeństwa przewodu {cable}...",
   "message:FINISHING_SAFETY_TEST": "Sprzątanie po teście bezpieczeństwa...",
   "message:RESTART_SAFETY_TEST_PROBE": "Odsuń i ponownie przyłóż sondę PE do krawędzi korpusu.",
@@ -119,6 +120,9 @@
   "message:GENERATED_SERIAL_NUMBER": "Nr seryjny: {serialNumber}",
   "message:PRINTING_LABEL": "Drukowanie etykiety {kind, select, inside{wewnętrznej} other{zewnętrznej}}...",
   "message:PRINTING_LABEL_FAILURE": "Nie udało się wydrukować etykiety {kind, select, inside{wewnętrznej} other{zewnętrznej}}:<br>{error}",
+  "message:UNWIRED:PREPARING": "Przygotowywanie testera...",
+  "message:UNWIRED:IDLE": "Wciśnij przycisk na sondzie,<br>aby wydrukować etykiety.",
+  "message:UNWIRED:STARTING": "Rozpoczynanie bez testów...",
 
   "message:GLP2:TESTER_NOT_READY": "GLP2: Tester nie jest gotowy.",
   "message:GLP2:RESETTING_TESTER_FAILURE": "GLP2: Resetowanie testera nie powiodło się.",

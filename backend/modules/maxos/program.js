@@ -26,6 +26,8 @@ module.exports = function setUpMaxosProgram(app, module)
     clear: () => {}
   };
 
+  module.initialized = false;
+
   module.glp2 = new Glp2Manager({
     comPort: module.config.testerAddress,
     comAddress: 0x01,
@@ -220,6 +222,8 @@ module.exports = function setUpMaxosProgram(app, module)
         module.debug(`[glp2] ${module.glp2.isReady() ? 'Ready' : 'Not ready'}!`);
 
         app.broker.subscribe('tagValuesChanged', () => handleProgram());
+
+        module.initialized = true;
 
         setImmediate(handleProgram);
       }

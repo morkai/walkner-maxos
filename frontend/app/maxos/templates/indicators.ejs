@@ -1,4 +1,7 @@
 <div class="maxos-indicators <%- enlarged ? 'is-enlarged' : '' %>">
+  <% if (!cables.length) { %>
+  <div class="maxos-indicators-empty"><%- t('maxos', 'indicators:empty') %></div>
+  <% } %>
   <% cables.forEach(function(cable) { %>
   <div class="maxos-cable" data-cable="<%- cable.no %>">
     <div class="maxos-safetyTest" data-tag="safetyTest.disabled" data-true="" data-false="">

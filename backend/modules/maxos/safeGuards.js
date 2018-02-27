@@ -97,6 +97,11 @@ module.exports = function setUpSafeGuards(app, module)
 
   app.broker.subscribe('tagValueChanged.safetyTest.blackbox', state =>
   {
+    if (!module.initialized)
+    {
+      return;
+    }
+
     if (state.newValue === true)
     {
       module.glp2.stop(() => {});

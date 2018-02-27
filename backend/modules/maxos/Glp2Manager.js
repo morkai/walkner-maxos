@@ -24,6 +24,11 @@ function Glp2Manager(options)
   EventEmitter.call(this);
 
   /**
+   * @type {boolean}
+   */
+  this.fake = options.comPort === '0.0.0.0:0000';
+
+  /**
    * @type {function}
    */
   this.log = options.log || function() {};
@@ -121,6 +126,11 @@ Glp2Manager.prototype.start = function()
 
   const manager = this;
 
+  if (manager.fake)
+  {
+    return setImmediate(manager.onMasterOpen);
+  }
+
   step(
     function createMasterStep()
     {
@@ -182,23 +192,30 @@ Glp2Manager.prototype.stop = function(done)
  */
 Glp2Manager.prototype.reset = function(cancelDelay, done)
 {
+  const manager = this;
+
   if (typeof cancelDelay === 'function')
   {
     done = /** @type {function} */cancelDelay;
-    cancelDelay = this.options.cancelDelay || 2000;
+    cancelDelay = manager.options.cancelDelay || 2000;
   }
 
-  if (this.readyState !== Glp2Manager.ReadyState.CONNECTING
-    && this.readyState !== Glp2Manager.ReadyState.READY)
+  if (manager.readyState !== Glp2Manager.ReadyState.CONNECTING
+    && manager.readyState !== Glp2Manager.ReadyState.READY)
   {
-    done(null);
+    setImmediate(done, null);
 
     return;
   }
 
-  this.readyState = Glp2Manager.ReadyState.RESETTING;
+  manager.readyState = Glp2Manager.ReadyState.RESETTING;
 
-  const manager = this;
+  if (manager.fake)
+  {
+    setImmediate(manager.onReady, null, done);
+
+    return;
+  }
 
   step(
     function cancelTestStep()
@@ -391,6 +408,13 @@ Glp2Manager.prototype.getActualValues = function(done)
   if (this.readyState !== Glp2Manager.ReadyState.READY)
   {
     done('GLP2:TESTER_NOT_READY', null);
+
+    return;
+  }
+
+  if (this.fake)
+  {
+    setImmediate(done, null);
 
     return;
   }
@@ -615,7 +639,7 @@ Glp2Manager.prototype.onMasterRx = function(buffer)
  */
 Glp2Manager.prototype.onReady = function(err, done)
 {
-  if (!this.master)
+  if (!this.fake && !this.master)
   {
     if (this.readyState === Glp2Manager.ReadyState.RESETTING)
     {

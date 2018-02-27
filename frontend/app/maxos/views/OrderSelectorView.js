@@ -9,7 +9,7 @@ define([
   'app/viewport',
   'app/core/View',
   'app/core/views/VkbView',
-  '../templates/orderSelector'
+  'app/maxos/templates/orderSelector'
 ], function(
   _,
   $,
@@ -35,7 +35,7 @@ define([
         this.order.connectors = parseInt(this.$('input[name="connectors"]:checked').val(), 10) || 0;
         this.order.cores = parseInt(this.$('input[name="cores"]:checked').val(), 10) || 0;
 
-        if (this.order.cables && this.order.connectors && this.order.cores)
+        if (this.order.cables === -1 || (this.order.cables && this.order.connectors && this.order.cores))
         {
           this.trigger('orderSelected', this.order);
         }
@@ -57,6 +57,14 @@ define([
       {
         this.$id('orderNo').val(e.currentTarget.textContent.trim());
         this.onVkbValueChange();
+      },
+
+      'change input[name="cables"]': function()
+      {
+        var unwired = this.$('input[name="cables"]:checked').val() === '-1';
+
+        this.$('input[name="connectors"]').prop('disabled', unwired).filter(':checked').prop('checked', false);
+        this.$('input[name="cores"]').prop('disabled', unwired).filter(':checked').prop('checked', false);
       }
 
     },
@@ -135,9 +143,10 @@ define([
 
       if (this.$id('orderNo').val() === '000000000' || this.model.auth.changeConfig())
       {
-        $radios.filter('[name="cables"]').prop('disabled', false);
-        $radios.filter('[name="connectors"]').prop('disabled', false);
-        $radios.filter('[name="cores"]').prop('disabled', false);
+        ['cables', 'connectors', 'cores'].forEach(function(name)
+        {
+          $radios.filter('[name="' + name + '"]').prop('disabled', false);
+        });
       }
     },
 

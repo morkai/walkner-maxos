@@ -12,6 +12,7 @@ module.exports = function(app, module, done)
   const autoStart = module.tags.get('throughWireTest.autoStart', false);
   const pe2 = module.tags.get('safetyTest.pe2', false);
   const configChangeTime = module.tags.time('safetyTest.config');
+  const unwired = module.tags.get('program.cables') === -1;
   let checkContactors = false;
   let actualValuesErrors = 0;
 
@@ -25,12 +26,19 @@ module.exports = function(app, module, done)
     {
       if (!disabled)
       {
-        module.message('SETTING_SAFETY_TEST', {severity: 'warning'}, this.group());
+        if (unwired)
+        {
+          module.message('UNWIRED:PREPARING', {severity: 'warning'}, this.group());
+        }
+        else
+        {
+          module.message('SETTING_SAFETY_TEST', {severity: 'warning'}, this.group());
+        }
       }
 
       reset(this.group());
 
-      module.tags.set('S.1.control', !disabled, this.group());
+      module.tags.set('S.1.control', !unwired && !disabled, this.group());
       module.tags.set('S.2.control', false, this.group());
 
       module.glp2.reset(1, this.group());
@@ -42,7 +50,7 @@ module.exports = function(app, module, done)
         return this.skip(err);
       }
 
-      if (disabled)
+      if (unwired || disabled || module.glp2.fake)
       {
         return;
       }
@@ -53,7 +61,7 @@ module.exports = function(app, module, done)
           module.tags.get('safetyTest.config'),
           module.tags.get('safetyTest.pe2')
         ),
-        this.group()
+        this.next()
       );
     },
     function(err)
@@ -62,7 +70,7 @@ module.exports = function(app, module, done)
       {
         module.error(`[idle] Failed to set test program: ${err.message || err}`);
 
-        if (disabled)
+        if (unwired || disabled)
         {
           return fail(2500, 'ERROR', {error: err.message || err});
         }
@@ -70,7 +78,7 @@ module.exports = function(app, module, done)
         return fail(2500, 'SETTING_SAFETY_TEST_FAILURE', {error: err.message || err});
       }
 
-      if (disabled)
+      if (unwired || disabled)
       {
         if (module.tags.get('S.1.status') || module.tags.get('S.2.status'))
         {
@@ -87,7 +95,7 @@ module.exports = function(app, module, done)
         checkContactors = true;
       }
 
-      if (disabled && module.tags.get('throughWireTest.autoStart'))
+      if ((unwired || disabled) && module.tags.get('throughWireTest.autoStart'))
       {
         return module.tags.set('program.state', 'start', done);
       }
@@ -134,9 +142,17 @@ module.exports = function(app, module, done)
 
       if (res)
       {
-        if (res.faultStatus === glp2.FaultStatus.NO_TEST_STEP_DEFINED && !disabled)
+        if (res.faultStatus === glp2.FaultStatus.NO_TEST_STEP_DEFINED)
         {
-          return setImmediate(done);
+          if (unwired)
+          {
+            return module.tags.set('program.state', 'start', done);
+          }
+
+          if (!disabled)
+          {
+            return setImmediate(done);
+          }
         }
 
         module.glp2.lastResponse = res;
@@ -146,7 +162,7 @@ module.exports = function(app, module, done)
       else
       {
         module.message(
-          disabled ? 'IDLE_THROUGH_WIRE' : 'IDLE',
+          module.tags.get('program.cables') === -1 ? 'UNWIRED:IDLE' : (disabled ? 'IDLE_THROUGH_WIRE' : 'IDLE'),
           monitorTestStart
         );
       }
