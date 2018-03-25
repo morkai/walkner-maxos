@@ -171,6 +171,11 @@ module.exports = function(app, module, done)
 
   function reset(done)
   {
+    if (!module.tags.get('masters.controlProcess', false))
+    {
+      return done();
+    }
+
     step(
       function()
       {
