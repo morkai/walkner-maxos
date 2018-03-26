@@ -19,6 +19,11 @@ module.exports = function(app, module, done)
       return false;
     }
 
+    if (bail && !module.tags.get('throughWireTest.checkAsideConnectors'))
+    {
+      return false;
+    }
+
     const {plugged, aside} = getConnectors();
     const toPlug = [];
     const toAside = [];

@@ -16,7 +16,8 @@ safetyTest.blackbox,Test BLACKBOX,-,setting,-,-,1,1,bool,-,-,-,-,-,-,-
 throughWireTest.disabled,Wyłączenie testu oprzewodowania,-,setting,-,-,1,1,bool,-,-,-,-,-,-,-
 throughWireTest.autoStart,Automatyczny start testu oprzewodowania,-,setting,-,-,1,1,bool,-,-,-,-,-,-,-
 throughWireTest.checkAllCores,Sprawdzanie sprawdzonych żył,-,setting,-,-,1,1,bool,-,-,-,-,-,-,-
-throughWireTest.checkDelay,Min. odstęp czasu do sprawdzania żył [ms],-,setting,-,-,1,1,number,1,10000,-,-,-,-,-
+throughWireTest.checkDelay,Min. odstęp czasu do sprawdzania żył [ms],-,setting,-,-,1,1,number,1,600000,-,-,-,-,-
+throughWireTest.checkAsideConnectors,Sprawdzanie odłożenia łączówek podczas sprawdzania żył,-,setting,-,-,1,1,bool,-,-,-,-,-,-,-
 labels.inside.printer,Etykieta wewnętrzna: adres drukarki,-,setting,-,-,1,1,string,-,-,-,-,-,-,-
 labels.inside.offsetX,Etykieta wewnętrzna: przesunięcie poziome,-,setting,-,-,1,1,number,0,9999,-,-,-,-,-
 labels.inside.offsetY,Etykieta wewnętrzna: przesunięcie pionowe,-,setting,-,-,1,1,number,0,9999,-,-,-,-,-

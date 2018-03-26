@@ -41,7 +41,8 @@ module.exports = function setUpMaxosTestModel(app, mongoose)
   }, {
     id: false,
     minimize: false,
-    retainKeyOrder: true
+    retainKeyOrder: true,
+    usePushEach: true
   });
 
   maxosTestSchema.statics.TOPIC_PREFIX = 'maxos.tests';
@@ -51,11 +52,6 @@ module.exports = function setUpMaxosTestModel(app, mongoose)
   maxosTestSchema.index({startedAt: -1});
   maxosTestSchema.index({serialNumber: 1, status: 1});
   maxosTestSchema.index({'order._id': 1, status: 1, itemNumber: -1});
-
-  maxosTestSchema.pre('save', function(next)
-  {
-    next();
-  });
 
   maxosTestSchema.statics.findLastSerialNumber = function(orderNo, done)
   {
