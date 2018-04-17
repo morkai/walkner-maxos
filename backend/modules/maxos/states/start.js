@@ -15,7 +15,7 @@ module.exports = function(app, module, done)
     {
       module.test.messages = [];
 
-      if (!unwired)
+      if (unwired)
       {
         module.message('UNWIRED:STARTING', {severity: 'warning'}, this.group());
       }
