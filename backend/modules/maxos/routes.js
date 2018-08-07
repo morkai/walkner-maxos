@@ -313,7 +313,7 @@ module.exports = function setUpMaxosRoutes(app, module)
           return next(err);
         }
 
-        const cables = _.filter(sapOrder.bom, c => /WIRE\s+COMP/i.test(c.name)).map(c =>
+        const cables = _.filter(sapOrder.bom, c => /WIRE\s*C(OMP|PL)/i.test(c.name)).map(c =>
         {
           const cable = {
             connectors: 0,
