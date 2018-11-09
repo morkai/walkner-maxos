@@ -38,6 +38,7 @@ exports.build = (tag, kind, test) =>
   const logoCount = LOGO_COUNTS[kind];
   const {order} = test;
   const serialNumber = test.serialNumber || '0000.000000000.0000';
+  const pce = +serialNumber.split('.')[2];
   const offsetX = tag(`labels.${kind}.offsetX`);
   const offsetY = tag(`labels.${kind}.offsetY`);
   const nc12 = order.materialNumber || '000000000000';
@@ -68,6 +69,13 @@ exports.build = (tag, kind, test) =>
     serialNumber2 = serialNumber;
   }
 
+  let quantityInBox = order.quantityInBox || 0;
+
+  if (quantityInBox && pce === order.quantityInOrder && (pce % quantityInBox) !== 0)
+  {
+    quantityInBox = pce % order.quantityInBox;
+  }
+
   const templateData = {
     DLE: '\u0010',
     OFFSET_X: offsetX || 0,
@@ -93,7 +101,7 @@ exports.build = (tag, kind, test) =>
     EOC_CODE_SUFFIX: eocCode.length > 2 ? e(eocCode.substr(-2)) : '',
     EAN1: e(ean1.substr(0, ean1.length - 1)),
     EAN1_BOX: e(order.ean1Box),
-    QUANTITY_IN_BOX: order.quantityInBox || 0,
+    QUANTITY_IN_BOX: quantityInBox,
     QUANTITY_IN_ORDER: order.quantityInOrder || 0,
     DG: '',
     XG: '',
