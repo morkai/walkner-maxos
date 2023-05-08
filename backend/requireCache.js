@@ -198,7 +198,9 @@ function loadSources(requireCache)
 
 function loadSource(sources, path)
 {
-  if (!/\.js(on)?$/.test(path) || sources[path] !== undefined)
+  if (/^([A-Za-z]:|\/)/.test(path)
+    || !/\.js(on)?$/.test(path)
+    || sources[path] !== undefined)
   {
     return;
   }

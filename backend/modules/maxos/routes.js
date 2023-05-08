@@ -158,19 +158,26 @@ module.exports = function setUpMaxosRoutes(app, module)
         {
           const outside = new Set();
 
-          sortedItemList.forEach(itemNo =>
+          if (labelCount === 0 && sortedItemList.length === 1)
           {
-            const remainder = itemNo % quantityInBox;
+            outside.add(sortedItemList[0]);
+          }
+          else
+          {
+            sortedItemList.forEach(itemNo =>
+            {
+              const remainder = itemNo % quantityInBox;
 
-            if (remainder === 0)
-            {
-              outside.add(itemNo);
-            }
-            else
-            {
-              outside.add(itemNo + (quantityInBox - (itemNo % quantityInBox)));
-            }
-          });
+              if (remainder === 0)
+              {
+                outside.add(itemNo);
+              }
+              else
+              {
+                outside.add(itemNo + (quantityInBox - (itemNo % quantityInBox)));
+              }
+            });
+          }
 
           itemsByKind.outside = Array.from(outside).sort((a, b) => a - b);
           labelCount += itemsByKind.outside.length;

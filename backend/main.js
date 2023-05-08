@@ -75,19 +75,21 @@ blocked(function(ms)
 
 main(app, modules);
 
-app.broker.subscribe('app.started').setLimit(1).on('message', function()
+app.broker.subscribe('app.started').setLimit(1).on('message', () =>
 {
   if (requireCache.built)
   {
     requireCache.save();
+
     app.debug('Require cache built!');
 
-    app.timeout(1, () => process.exit());
+    setTimeout(() => process.exit(), 1000); // eslint-disable-line no-process-exit
   }
 
-  app.timeout(5000, function()
+  setTimeout(() =>
   {
     requireCache.reset();
+
     app.debug('Require cache reset!');
-  });
+  }, 5000);
 });

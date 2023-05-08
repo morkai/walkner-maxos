@@ -174,7 +174,8 @@ Glp2Manager.prototype.stop = function(done)
 
   this.readyState = Glp2Manager.ReadyState.STOPPED;
 
-  if (oldReadyState === Glp2Manager.ReadyState.STOPPED
+  if (this.fake
+    || oldReadyState === Glp2Manager.ReadyState.STOPPED
     || oldReadyState === Glp2Manager.ReadyState.DISCONNECTED)
   {
     done(null);

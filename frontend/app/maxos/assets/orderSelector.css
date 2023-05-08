@@ -2,7 +2,7 @@
   display: flex;
 }
 .maxos-orderSelector-inputs {
-  width: 350px;
+  width: 475px;
 }
 .maxos-orderSelector-recentOrders {
   flex: 1 1 auto;
@@ -54,4 +54,9 @@
 }
 .maxos-orderSelector-actions .btn {
   font-size: 35px;
+}
+@media (min-width: 768px) {
+  .modal-dialog {
+    width: 725px;
+  }
 }

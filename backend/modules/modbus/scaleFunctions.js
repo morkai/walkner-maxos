@@ -142,7 +142,7 @@ var SCALE_FUNCTIONS = {
     return {
       rawValueToValue: rawValue => nullValues.includes(rawValue) ? null : rawValue,
       valueToRawValue: value => value === null ? nullValues[0] : value
-    }
+    };
   },
 
   const: function(tag, args)
